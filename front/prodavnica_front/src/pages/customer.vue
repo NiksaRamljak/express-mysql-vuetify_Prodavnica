@@ -84,7 +84,7 @@ export default {
 
     const updateCustomer = async () => {
       try {
-        await axios.put(`http://localhost:4390/customer/${customer.value.ID}`, customer.value, {
+        await axios.patch(`http://localhost:4390/user/update`, customer.value, {
           headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}
         });
         alert('Customer updated successfully');
